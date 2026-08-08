@@ -1,0 +1,10 @@
+torch
+tochvision
+transformers
+Pillow
+chromadb
+pandas
+numpy
+matplotlib
+Seaborn
+sklearn
