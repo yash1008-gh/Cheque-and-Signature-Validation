@@ -21,7 +21,7 @@ model.eval()
 # 448 (Width)  = 14 * 32
 # This 1:4 ratio prevents the "squashing" of long signatures.
 transform = T.Compose([
-    T.Resize((532, 532)),
+    T.Resize((560, 504)),
     T.ToTensor(),
     T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
@@ -48,9 +48,9 @@ def get_signature_embedding(image_path):
 # ---------------------------------------------------------
 if __name__ == "__main__":
     # You MUST test three files now, not two.
-    file_real_1 = r"C:\Users\yashs\Downloads\CEDAR\signatures\full_org\original_8_1.png" # Baseline genuine
-    file_real_2 = r"C:\Users\yashs\Downloads\CEDAR\signatures\full_org\original_8_2.png" # Second genuine (to test natural variance)
-    file_fake = r"C:\Users\yashs\Downloads\CEDAR\signatures\full_forg\forgeries_8_6.png"     # The high-quality forgery
+    file_real_1 = r"C:\Users\yashs\Downloads\Cheque Verification System\Signature Data\archive (3)\signature_ds_combined\0001\0001_01.jpg" # Baseline genuine
+    file_real_2 = r"C:\Users\yashs\Downloads\Cheque Verification System\Signature Data\archive (3)\signature_ds_combined\0001\0001_02.jpg" # Second genuine (to test natural variance)
+    file_fake = r"C:\Users\yashs\Downloads\Cheque Verification System\Signature Data\archive (3)\signature_ds_combined\0001_forg\0001F_01.jpg"     # The high-quality forgery
 
     print(f"\nProcessing signatures...")
     start_time = time.time()
